@@ -22,11 +22,11 @@ options(htmltools.dir.version = FALSE)
 <img src="https://njtierney.updog.co/img/njt-headshot-climb.png" alt="Me at Nationals" style="max-width: 50%">
 </center>
 
-- Recently submitted PhD in Statistics under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) at QUT with BRAG
-- Currently a research Fellow in Statistics at Monash University with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) at [NUMBAT]()
-- Active in the [rOpenSci]() community
+- Recently submitted PhD in Statistics under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) with [BRAG](https://bragqut.wordpress.com)
+- Currently a research Fellow in Statistics at Monash University with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) at [NUMBAT](http://numbat.space/)
+- Active in the [rOpenSci](https://ropensci.org/) community
 - Very Excited about the R language
-- Also enjoys:
+- Also enjoy:
   + Rock Climbing
   + Drinking Coffee
 
@@ -51,26 +51,28 @@ class: center, middle, inverse
 Introduce yourselves to TWO other people
 
 ---
-
+class: middle, center, inverse
 # Key Elements of the course
 
-- Rmarkdown
-- Github
-- RStudio
+Rmarkdown
+
+Github
+
+RStudio
 
 ---
-
+class: middle, center, inverse
 # The bad news
 
-- There are times when learning this material might be 
-  frustrating, and that is a totally normal thing, and expected
+There are times when learning this material might be  frustrating, and that is a totally normal thing, and expected
 
 ---
-
+class: middle, center, inverse
 # The good news: 
 
-- This is usually temporary and well worth the effort. 
-- We are also here to help!
+This is temporary and well worth the effort. 
+
+We are here to help!
 
 <!--
 ![](http://gph.is/1Iw29N0)
@@ -100,6 +102,7 @@ class: middle
 
 # An RMarkdown document
 
+An example document
 
 ???
 
@@ -174,7 +177,7 @@ Extra:
 
 ---
 
-# Demonstration of this content
+# Demonstratw
 
 - Here's one I prepared earlier
 
@@ -214,24 +217,10 @@ output:
 - Add an option to keep the markdown source code (hint: look at the gear icon next to `knit`)
 - print the code for one of the figures, but not the other (hint: use `echo = `)
 
-???
-
-  - demonstrate:
-    - echo
-    - eval
-    - dev
-    - error
-    - fig.width
-    - fig.height
-    ...
-    - include
-    - results
-    - message
-    
 
 ---
 
-# Demonstrate this
+# Demonstrate
 
 - There are many other chunk options, to learn about them, I recommend:
   - The RStudio [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
@@ -330,7 +319,11 @@ Sometimes you have an error in your rmarkdown document. These can be difficult t
 class: inverse, middle, center
 # Your turn
 
-Get the rmarkdown document to run
+Open 
+
+`06-rmd-find-errors/06-rmd-find-errors.Rmd `
+
+Get it to run
   
 ---
 
@@ -342,7 +335,7 @@ Get the rmarkdown document to run
 
 ---
 class:inverse, middle, center
-# Going further with Rmarkdown
+# Demonstration: Going further with Rmarkdown
 
 Using rmarkdown and word
 
@@ -356,7 +349,7 @@ Extending word templates: http://rmarkdown.rstudio.com/articles_docx.html
 
 #  Templates 
 
-- templates:
+- Templates:
   - https://github.com/Pakillo/rmdTemplates
 - rticles package:
   - https://github.com/rstudio/rticles
@@ -375,16 +368,6 @@ Extending word templates: http://rmarkdown.rstudio.com/articles_docx.html
 # Notebooks
 
 - http://rmarkdown.rstudio.com/r_notebooks.html
-
----
-
-# Learning more
-
-- The book by Yihui! https://yihui.name/knitr/
-- Highly recommend the rmarkdown chapter in R for data science:
-  - http://r4ds.had.co.nz/r-markdown.html
-- knitr in a nutshell: http://kbroman.org/knitr_knutshell/
-- Maëlle Salmons course: https://github.com/maelle/rmd_course_isglobal
 
 ---
 
@@ -413,6 +396,18 @@ Extending word templates: http://rmarkdown.rstudio.com/articles_docx.html
   - http://rmarkdown.rstudio.com/authoring_shiny.html
 - How to go from an RScript to Rmd
   - using spin: http://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/
+
+
+---
+
+# Learning more
+
+- The book by Yihui! https://yihui.name/knitr/
+- Highly recommend the rmarkdown chapter in R for data science:
+  - http://r4ds.had.co.nz/r-markdown.html
+- knitr in a nutshell: http://kbroman.org/knitr_knutshell/
+- Maëlle Salmons course: https://github.com/maelle/rmd_course_isglobal
+
 
 ---
 

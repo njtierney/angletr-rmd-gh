@@ -57,13 +57,17 @@ background-image: url(http://phdcomics.com/comics/archive/phd101212s.gif)
 - From Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/git.html ), GitHub is ...
 
 > ... A website that allows you to share your code with the world, solicit improvements via pull requests and track issues. 
-> Git + GitHub is the most popular version control system for developers of R packages (witness the thousands of R packages hosted on GitHub).
 
 > Have your ever tried to collaboratively write code with someone by sending files back and forth via email or a Dropbox folder? It takes a lot of effort just to make sure that the two of you aren’t working on the same file and overwriting each others’ changes. With Git, both of you can work on the same file at the same time. Git will either combine your changes automatically, or it will show you all the ambiguities and conflicts.
 
 ---
 
 # Using GitHub with RStudio
+
+A suggested workflow demonstration
+
+???
+
 
 - Create a repository on github
 - Edit the README online
@@ -74,6 +78,23 @@ background-image: url(http://phdcomics.com/comics/archive/phd101212s.gif)
 - Commit
 - push to GitHub
 
+
+---
+
+# Your Turn
+
+
+- Create a repository on github
+- Edit the README online
+- Make an RStudio project, and pull this repository
+- Make a change on the README line
+- Delete another line
+- View "diff"
+- Commit
+- push to GitHub
+
+Hint: http://happygitwithr.com/new-github-first.html
+
 ---
 class: center, inverse, middle
 # Making a Pull Request on GitHub
@@ -82,18 +103,46 @@ class: center, inverse, middle
 
 # The online path to a pull request
 
-- Go to my repository ...
+A suggested workflow
+
+???
+
+- Go to the repository https://github.com/njtierney/forkrmd
 - click "fork"
 - Edit the content directly
 - commit
 - make a pull request
 
+---
+
+# Your Turn
+
+- Go to the repository https://github.com/njtierney/forkrmd
+- click "fork"
+- Edit the content directly
+- commit
+- make a pull request
 
 ---
 
 # The RStudio path to a pull request
 
+- When things are bit bigger!
+
+???
+
 - open this in RStudio
+- make some changes
+- commit
+- push
+- click "pull request"
+
+---
+
+# Your turn to use RStudio to do a pull request
+
+
+- open the repo (https://github.com/njtierney/forkrmd) in RStudio
 - make some changes
 - commit
 - push
@@ -110,18 +159,6 @@ class: center, inverse, middle
 
 ---
 
-#  Your Turn
-
-- See the repo on github
-- fork
-- open in Rstudio
-- change the output to `github_document`
-- run the document
-- commit, push
-- look at github
-
----
-
 # Notes on using GitHub
 
 - Privacy:
@@ -134,7 +171,7 @@ class: center, inverse, middle
 
 ---
 
-# GitHub in the R Community
+# Using GitHug Issues and Pull Requests: The next level
 
 - issues can be used to log ideas, bugs, or even discussions
   - [rOpenSci unconf](https://github.com/ropensci/unconf17/issues)
