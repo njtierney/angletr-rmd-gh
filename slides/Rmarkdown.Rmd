@@ -1,0 +1,432 @@
+---
+title: "Using Rmarkdown and GitHub with RStudio"
+subtitle: "Part One: Using Rmarkdown"
+author: "Nicholas Tierney & Benoit Liquet"
+date: "2017/06/28"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Who am I?
+
+<center>
+<img src="https://njtierney.updog.co/img/njt-headshot-climb.png" alt="Me at Nationals" style="max-width: 50%">
+</center>
+
+- Recently submitted PhD in Statistics under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) at QUT with BRAG
+- Currently a research Fellow in Statistics at Monash University with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) at [NUMBAT]()
+- Active in the [rOpenSci]() community
+- Very Excited about the R language
+- Also enjoys:
+  + Rock Climbing
+  + Drinking Coffee
+
+---
+
+# Who is Benoit?
+
+<center>
+<img src="http://e2s-uppa.eu/_resources-images/Images/Portraits/liquet_250x167.jpg" alt="Benoit" style="max-width: 50%">
+</center>
+
+- Professor at UPPA. 
+- Affiliated with ACEMS (Centre of Excellence for Mathematical and Statistical Frontiers), Queensland University of Technology.
+- Active member of the LMAP (Laboratory of Mathematics and Its Applications - UMR CNR 5142).
+- Also enjoys:
+  + Cycling! (Qualified multiple times for IRONMAN world championship!!!)
+
+---
+class: center, middle, inverse
+# Your Turn
+
+Introduce yourselves to TWO other people
+
+---
+
+# Key Elements of the course
+
+- Rmarkdown
+- Github
+- RStudio
+
+---
+
+# The bad news
+
+- There are times when learning this material might be 
+  frustrating, and that is a totally normal thing, and expected
+
+---
+
+# The good news: 
+
+- This is usually temporary and well worth the effort. 
+- We are also here to help!
+
+<!--
+![](http://gph.is/1Iw29N0)
+![](http://gph.is/1ONPJRV)
+-->
+
+---
+class: center, middle, inverse
+# Why RMarkdown + GitHub?
+
+https://www.youtube.com/watch?v=s3JldKoA0zw
+
+???
+
+- Discuss the elements of the video, and what we are going to be focussing on
+in  this workshop of that
+
+---
+class: middle, inverse, center
+
+# Rstudio
+
+Is amazing and free
+
+---
+class: middle
+
+# An RMarkdown document
+
+
+???
+
+> Show a document with a lot of bells and whistles, describe all of the really useful things in the document
+
+---
+class: center, inverse, middle
+# Wat
+
+I've skipped ahead - where are we, what is this place?
+
+Let's take it back a notch, and work through these pieces step by step.
+
+---
+
+# How is rmarkdown designed to be used?
+
+As Hadley says in his excellent (and free!) book: [R for data science](), Rmarkdown is designed to be used:
+
+1.  Communicate with decision makers, who want to focus on the conclusions,
+    not the code behind the analysis.
+    
+1.  An environment in which to _do_ data science, to capture the rich
+    narrative around your code as a modern day lab 
+    notebook, where you can capture not only what you did, but also what you
+    were thinking.
+    
+1.  For collaborating with other data scientists (including future you!), who
+    are interested in both your conclusions, and how you reached them (i.e.
+    the code).
+
+---
+
+# What does rmarkdown look like in RStudio?
+
+- Running chunks
+- Creating chunks
+- Running a document
+- Markdown syntax
+- Cheathsheets for rmarkdown:
+  - [RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+  - [Rmarkdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+
+???
+
+- example document is 02-rmd-figures-chunks
+  - how to run each chunk
+  - how to run the whole document
+  - How does the formatting of markdown work?
+  - shortcuts for creating chunks
+
+---
+# Your Turn: 
+
+- Go to `01-rmd-example/01-rmd-example.Rmd`
+
+Do the following tasks:
+
+- Add an introduction heading
+- Add your name and date to the YAML header
+- Describe the data from the airquality dataset using blockquotes (hint: `?airquality`)
+- Provide:
+  - a bulleted list describing the variables used in the data
+  - A direct quote from the ?data set describing the data
+  - Make a code chunk
+  - Make a library call in the code chunk
+  - Make a plot of ozone and solar radiation
+
+Extra: 
+
+- Make a plot of ozone and temperature
+
+---
+
+# Demonstration of this content
+
+- Here's one I prepared earlier
+
+---
+
+# What if I want to change the figure?
+
+
+- Code chunks have options
+
+    `r ''````{r fig.width = ..., fig.height = ...,  echo = ..., }
+    ```
+    ```
+
+---
+
+# What if I want to keep the images?
+
+```yaml
+title:
+author:
+date:
+output:
+  html_document:
+    keep_md: true
+```
+
+---
+
+# Your Turn
+
+## Tasks
+
+- Go to `02-rmd-figures-chunks/02-rmd-figures-chunks.Rmd`
+
+- Change the fig.width, fig.height, and dev of the figure in plot-1
+- Add an option to keep the markdown source code (hint: look at the gear icon next to `knit`)
+- print the code for one of the figures, but not the other (hint: use `echo = `)
+
+???
+
+  - demonstrate:
+    - echo
+    - eval
+    - dev
+    - error
+    - fig.width
+    - fig.height
+    ...
+    - include
+    - results
+    - message
+    
+
+---
+
+# Demonstrate this
+
+- There are many other chunk options, to learn about them, I recommend:
+  - The RStudio [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+  - The [official documentation](https://yihui.name/knitr/options/)
+  - [R4ds section on rmarkdown](http://r4ds.had.co.nz/r-markdown.html)
+
+---
+
+# Tables, inline code, Equations
+
+- You can print tables in rmarkdown, and refer to values inside text
+- You can also print equations using LaTeX syntax wrapped in `$$`.
+
+???
+
+- Table (kable)
+- inline code
+- equations
+
+---
+# Your Turn
+
+- Go to `03-rmd-lm-tables-inline-eqn/03-rmd-lm-tables-inline-eqn.Rmd`
+  - Make a table
+  - Make some inline code chunks
+  - Make an equation describing the linear model used
+  
+---
+
+# Demonstration
+
+---
+
+# Aside: There are many many options for tables
+
+- knitr::kable is simple
+- pander
+- xtable
+- the list goes on!
+- https://github.com/ropenscilabs/packagemetrics
+- https://ropensci.org/blog/blog/2017/06/27/packagemetrics
+
+---
+
+# Setting global options 
+
+- What if you have 100 chunks that you want to set the figure for?
+- Setting all of these options can be a bit annoying - but there is a better way
+
+---
+
+# Your turn
+
+- Go to `04-rmd-global-opts-device/04-rmd-global-opts-device.Rmd`
+
+- set a global option to: 
+  - hide all of the code
+  - set the graphics device
+  - set the DPI
+  
+---
+  
+# Using citations in a document
+
+- bibliographies and citations are super important in 
+- You can cite work by putting it in a .bib file in the same directory as your rmarkdown document
+- [@Tag] 
+- This is then printed at the end of the document, so you normally # References at the end
+
+---
+
+# Your turn
+
+- go to `05-rmd-bib-polish/05-rmd-bib-polish.Rmd`
+  - refer to the packages that you use and add a citation
+  - http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+
+---
+
+# How to troubleshoot an Rmarkdown document
+
+Sometimes you have an error in your rmarkdown document. These can be difficult to track down sometimes, so here is our recommended workflow:
+
+- develop code in chunks and execute the chunks until they work, then move on
+- knit the document regularly to check for errors
+- if there is an error:
+  - recreate the error in an interactive session:
+    - restart R
+    - run all chunks below
+    - find the chunk that did not work, fix until it does
+    - run all chunks below
+    - explore working directory issues
+      - remember that the rmarkdown directory is where the .Rmd file lives
+
+---
+class: inverse, middle, center
+# Your turn
+
+Get the rmarkdown document to run
+  
+---
+
+# My philosophy on Rmarkdown
+
+- Keep it simple
+- focus on content
+- Then move it to word or LaTeX if you need to
+
+---
+class:inverse, middle, center
+# Going further with Rmarkdown
+
+Using rmarkdown and word
+
+Using rmarkdown and LaTeX
+
+Simple, when it works
+
+Extending word templates: http://rmarkdown.rstudio.com/articles_docx.html
+
+---
+
+#  Templates 
+
+- templates:
+  - https://github.com/Pakillo/rmdTemplates
+- rticles package:
+  - https://github.com/rstudio/rticles
+  
+---
+
+
+# Slides
+
+- These very slides are made in rmarkdown!
+- RStudio makes it easy
+- Highly recommend Xaringan
+
+---
+
+# Notebooks
+
+- http://rmarkdown.rstudio.com/r_notebooks.html
+
+---
+
+# Learning more
+
+- The book by Yihui! https://yihui.name/knitr/
+- Highly recommend the rmarkdown chapter in R for data science:
+  - http://r4ds.had.co.nz/r-markdown.html
+- knitr in a nutshell: http://kbroman.org/knitr_knutshell/
+- Maëlle Salmons course: https://github.com/maelle/rmd_course_isglobal
+
+---
+
+# Other formats for rmarkdown
+
+- bookdown: https://bookdown.org/yihui/bookdown/
+  - or your thesis!: https://github.com/cpsievert/phd-thesis
+- blogdown: https://github.com/rstudio/blogdown
+- Read about them all here: http://rmarkdown.rstudio.com/formats.html
+
+---
+
+# Advanced topics
+
+- citation styles
+  - add specific citation styles from 
+  - http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+  - example in
+- parameters
+  - programmatically control the inputs for your rmarkdown document
+  - http://rmarkdown.rstudio.com/developer_parameterized_reports.html
+- flexdashboard
+  - http://rmarkdown.rstudio.com/flexdashboard/index.html
+- interactive components
+  - add a shiny application into your documents
+  - http://rmarkdown.rstudio.com/authoring_shiny.html
+- How to go from an RScript to Rmd
+  - using spin: http://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/
+
+---
+
+# References
+
+This tutorial was heavily inspired by the excellent teaching material that is made freely available on the internet:
+
+- [R for Data Science](http://r4ds.had.co.nz/)
+- [happy git with r](http://happygitwithr.com/)
+- Maëlle Salmon's Rmarkdown course: https://github.com/maelle/rmd_course_isglobal
+
+---
+
+# Plan
+
+- Break
+- GitHub session next

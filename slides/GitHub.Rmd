@@ -1,0 +1,178 @@
+---
+title: "Using Rmarkdown and GitHub with RStudio"
+subtitle: "Part Two: Using GitHub"
+author: "Nicholas Tierney & Benoit Liquet"
+date: "2017/06/28"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# What do you do after you've written your analysis?
+
+- Share it with a colleague?
+- How?
+
+--
+
+- Github
+
+---
+
+# Why GitHub?
+
+- First, what is Git?
+   - Git improves version control
+   - What is version control? If you've ever done anything like this:
+
+---
+
+background-image: url(http://phdcomics.com/comics/archive/phd101212s.gif)
+
+---
+
+# Why GitHub 
+
+- So what does git do?
+
+- Facilitates working collaboratively on big software projects
+- It does this with a very concrete structure
+- Originally designed to manage the linux kernal
+- repurposed/reused by the data science community
+
+---
+   
+# Why Github?
+
+- So, what is Git__Hub__?
+
+- From Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/git.html ), GitHub is ...
+
+> ... A website that allows you to share your code with the world, solicit improvements via pull requests and track issues. 
+> Git + GitHub is the most popular version control system for developers of R packages (witness the thousands of R packages hosted on GitHub).
+
+> Have your ever tried to collaboratively write code with someone by sending files back and forth via email or a Dropbox folder? It takes a lot of effort just to make sure that the two of you aren’t working on the same file and overwriting each others’ changes. With Git, both of you can work on the same file at the same time. Git will either combine your changes automatically, or it will show you all the ambiguities and conflicts.
+
+---
+
+# Using GitHub with RStudio
+
+- Create a repository on github
+- Edit the README online
+- Make an RStudio project, and pull this repository
+- Make a change on the README line
+- Delete another line
+- View "diff"
+- Commit
+- push to GitHub
+
+---
+class: center, inverse, middle
+# Making a Pull Request on GitHub
+
+---
+
+# The online path to a pull request
+
+- Go to my repository ...
+- click "fork"
+- Edit the content directly
+- commit
+- make a pull request
+
+
+---
+
+# The RStudio path to a pull request
+
+- open this in RStudio
+- make some changes
+- commit
+- push
+- click "pull request"
+
+---
+
+# A guide to commit messages
+
+- Have an informative message
+  - commit regularly
+    - subject to some tests / litmus test, e.g., Does the document compile? Have I added the section that I wanted?
+  - Keep it simple
+
+---
+
+#  Your Turn
+
+- See the repo on github
+- fork
+- open in Rstudio
+- change the output to `github_document`
+- run the document
+- commit, push
+- look at github
+
+---
+
+# Notes on using GitHub
+
+- Privacy:
+  - put things that you want to ignore in the `.gitignore` file
+    - private data
+    - images
+    - large files
+- NEVER commit anything to GitHub in a public repository you don't want to share, unless it is Private.
+- Horror story of passwords being stolen
+
+---
+
+# GitHub in the R Community
+
+- issues can be used to log ideas, bugs, or even discussions
+  - [rOpenSci unconf](https://github.com/ropensci/unconf17/issues)
+  - [rOpenSci onboarding](https://github.com/ropensci/onboarding/issues/127)
+  - [datapasta](https://github.com/MilesMcBain/datapasta/issues/42)
+  - [datapasta](https://github.com/MilesMcBain/datapasta/issues/26)
+- These can then be used on project boards
+  - [narnia](https://github.com/njtierney/narnia/projects/2)
+  - [dplyr](https://github.com/tidyverse/dplyr/projects/3)
+- pull requests to share and collaborate
+  - [rOpenSci](https://github.com/ropensci/onboarding/pull/122)
+  - [dplyr](https://github.com/tidyverse/dplyr/pull/2717)
+
+---
+
+# Going further with GitHub
+
+- RStudio provides a nice interface, but it can be limiting in some ways
+- I highly recommend SourceTree or GitKraken for managing Git
+- They ahve very good tools for managing merge conflicts (when there are some changes that need to be manually added).
+- Other information here in Jenny Bryan's book: http://happygitwithr.com/git-client.html
+
+---
+
+# What else can you do with GitHub?
+
+- Deploy websites automatically
+  - [visdat](http://www.njtierney.com/visdat/)
+    - https://github.com/njtierney/visdat
+  - [dplyr](http://dplyr.tidyverse.org/)
+    - https://github.com/tidyverse/dplyr
+- Teach entire courses on github
+  - [Stat545](http://stat545.com/)
+  - https://github.com/STAT545-UBC
+
+---
+
+# Resources for learning GitHub
+
+- First stop: http://happygitwithr.com/
+- Other resources: http://happygitwithr.com/references.html
