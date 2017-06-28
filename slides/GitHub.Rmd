@@ -213,3 +213,11 @@ A suggested workflow
 
 - First stop: http://happygitwithr.com/
 - Other resources: http://happygitwithr.com/references.html
+
+
+---
+
+# Thank you
+
+Feedback form: 
+https://goo.gl/forms/JZYjWh4YeCq7pWV72

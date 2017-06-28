@@ -16,6 +16,28 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+class: center, inverse, middle
+
+Je suis très désolé, mon Français est VRAIMENT mal, alors je va parle anglais, et Benoit va parle Français
+
+Please let me know if you are having any problems and I will do my best to help!
+
+:)
+
+---
+
+# Please go to this link and click "download"
+
+https://github.com/njtierney/angletr-rmd-gh
+
+```{r out.width = "50%"}
+knitr::include_graphics("gh-dl.png")
+```
+
+Also, please let me know if you have any questions or concerns before the workshop starts!
+
+---
+
 # Who am I?
 
 <center>
@@ -177,7 +199,7 @@ Extra:
 
 ---
 
-# Demonstratw
+# Demonstrate
 
 - Here's one I prepared earlier
 
