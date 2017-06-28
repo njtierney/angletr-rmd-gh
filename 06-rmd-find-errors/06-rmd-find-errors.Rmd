@@ -23,12 +23,12 @@ bibliography: packages.bib
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
-                      dev = "png"})
+                      dev = "png")
 ```
 
-```{r library, echo = }
+```{r library}
 
-library(tidyverses)
+library(tidyverse)
 
 ```
 
@@ -124,7 +124,7 @@ We can present this result in a nice table using the `kable` function from the k
 
 ```{r lm-kable}
 
-knitr::kable(tidy_lm_aq_broom,
+knitr::kable(tidy_lm_aq,
              digits = 3,
              caption = "Table of results from the linear model")
 
@@ -137,5 +137,3 @@ We can also refer to individual results of the model inside the text. For exampl
 We have explored the relationship of Ozone with other variables in the airquality dataset
 
 # References
-
-$$$

@@ -28,8 +28,13 @@ library(tidyverse)
 
 
 # Introduction
+## sedconc header
 
-This is a simple analysis of the New York Air Quality Measurements using the R statistical programming language [@Rcore]. As stated in the helpfile `?airquality`, this dataset contains:
+- list
+- list
+
+This is a simple analysis of the New York Air Quality Measurements using the R statistical programming language [@base]. As stated in the helpfile `?airquality`, this dataset contains:
+
 
 > Daily air quality measurements in New York, May to September 1973.
 
@@ -98,8 +103,9 @@ ggplot(tidy_aq,
 To explore the relationships between Ozone and all of the variables in the dataset, we can fit a basic linear model, with Ozone as the outcome, and all other variables as the predictors. We can express this as:
 
 $$
-Ozone \sim \beta_0 + \beta_1Solar.R + \beta_2 Wind + \beta_3Temp + \epsilon
+Ozone \sim \beta_0 + \beta_1Solar + \beta_2 Wind + \beta_3Temp + \gamma +  \epsilon
 $$
+
 
 And we can fit this model using the code below.
 
@@ -150,7 +156,7 @@ solar_rad_lang       0.060       0.023       2.580     0.011
 wind_mph            -3.334       0.654      -5.094     0.000
 temp_fah             1.652       0.254       6.516     0.000
 
-We can also refer to individual results of the model inside the text. For example, we can say that the estimated coefficient of Wind miles per hour is -3.3335913, and the P value of this is 1.5159344\times 10^{-6}.
+We can also refer to individual results of the model inside the text. For example, we can say that the estimated coefficient of Wind miles per hour is -3.334,  and the P value of this is 0.
 
 # Conclusion
 

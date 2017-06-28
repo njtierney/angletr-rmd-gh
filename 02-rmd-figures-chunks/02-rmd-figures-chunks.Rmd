@@ -1,8 +1,10 @@
 ---
 title: "02-rmd-figures-chunks"
-author: "Your Name"
+author: "Nicholas Tierney"
 date: 2017/06/27
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 # Tasks
@@ -38,7 +40,8 @@ We are going to explore the relationship between solar radiation and other selec
 
 We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2.
 
-```{r figure-1}
+
+```{r figure-1, fig.width=10, fig.height=10, echo = FALSE, dev = "pdf"}
 library(ggplot2)
 ggplot(airquality,
        aes(x = Ozone,

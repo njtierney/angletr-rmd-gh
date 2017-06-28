@@ -1,20 +1,12 @@
----
-title: "04-rmd-global-opts-device"
-author: "Your Name"
-date: 2017/06/27
-output: 
-  html_document:
-    keep_md: true
----
+# 04-rmd-global-opts-device
+Your Name  
+2017/06/27  
 
-```{r}
 
+```r
 knitr::opts_chunk$set(fig.width = 4,
                       fig.height = 5,
-                      dev = c("png", "pdf", "tiff"),
-                      dpi = 300,
-                      echo = FALSE)
-
+                      dev = c("png", "pdf", "tiff"))
 ```
 
 
@@ -51,11 +43,10 @@ We are going to explore the relationship between solar radiation and other selec
 
 # Method
 
-```{r lm-fit, echo = TRUE}
 
+```r
 lm_fit <- lm(Ozone ~ Solar.R + Temp + Wind, 
              data = airquality)
-
 ```
 
 $$
@@ -66,32 +57,44 @@ $$
 
 We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2.
 
-```{r figure-1, fig.height = 2, fig.width = 2, echo = TRUE}
+
+```r
 library(ggplot2)
 ggplot(airquality,
        aes(x = Ozone,
            y = Solar.R)) + 
   geom_point()
+```
 
 ```
+## Warning: Removed 42 rows containing missing values (geom_point).
+```
+
+![](04-rmd-global-opts-device_files/figure-html/figure-1-1.png)<!-- -->
 
 We can also see that there is an interesting relationship between Ozone and temperature.
 
-```{r figure-2, fig.height = 2, fig.width = 2, echo = FALSE}
-
-ggplot(airquality,
-       aes(x = Ozone,
-           y = Temp)) + 
-  geom_point()
 
 ```
+## Warning: Removed 37 rows containing missing values (geom_point).
+```
+
+![](04-rmd-global-opts-device_files/figure-html/figure-2-1.png)<!-- -->
 
 
-```{r print-coef-table}
 
+```r
 knitr::kable(coef(lm_fit))
-
 ```
 
-`r coef(lm_fit)[2]`
+
+
+------------  ------------
+(Intercept)    -64.3420789
+Solar.R          0.0598206
+Temp             1.6520929
+Wind            -3.3335913
+------------  ------------
+
+0.0598206
 `broom::glance(lm_fit)$r.squared`

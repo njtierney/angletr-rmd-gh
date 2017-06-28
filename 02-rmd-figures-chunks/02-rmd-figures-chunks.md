@@ -1,32 +1,14 @@
----
-title: "04-rmd-global-opts-device"
-author: "Your Name"
-date: 2017/06/27
-output: 
-  html_document:
-    keep_md: true
----
-
-```{r}
-
-knitr::opts_chunk$set(fig.width = 4,
-                      fig.height = 5,
-                      dev = c("png", "pdf", "tiff"),
-                      dpi = 300,
-                      echo = FALSE)
-
-```
-
+# 02-rmd-figures-chunks
+Nicholas Tierney  
+2017/06/27  
 
 # Tasks
 
-- set a global option to: 
-  - hide all of the code
-    - hint: put `knitr::opts_chunk$set()` in a chunk and set the options
-  - set the graphics device
-    - hint: `dev = "png"` or even `dev = c("png", "pdf","tiff")`
-  - set the DPI
-    - hint: `dpi = 300`
+- Change the fig.width, fig.height, and dev of the figure in plot-1
+  - (hint: look at the gear icon in a chunk)
+- Add an option to keep the markdown source code 
+  - (hint: look at the gear icon next to `knit` icon)
+- print the code for one of the figures, but not the other (hint: use `echo = `)
 
 # Introduction
 
@@ -49,49 +31,31 @@ It contains the following variables
 
 We are going to explore the relationship between solar radiation and other selected variables, solar radiation, wind, and temperature.
 
-# Method
-
-```{r lm-fit, echo = TRUE}
-
-lm_fit <- lm(Ozone ~ Solar.R + Temp + Wind, 
-             data = airquality)
-
-```
-
-$$
-Ozone \sim \beta_0 + \beta_1Solar.R + \beta_2 Wind + \beta_3Temp + \epsilon
-$$
-
 # Results
 
 We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2.
 
-```{r figure-1, fig.height = 2, fig.width = 2, echo = TRUE}
-library(ggplot2)
-ggplot(airquality,
-       aes(x = Ozone,
-           y = Solar.R)) + 
-  geom_point()
+
 
 ```
+## Warning: Removed 42 rows containing missing values (geom_point).
+```
+
+![](02-rmd-figures-chunks_files/figure-html/figure-1-1.pdf)<!-- -->
 
 We can also see that there is an interesting relationship between Ozone and temperature.
 
-```{r figure-2, fig.height = 2, fig.width = 2, echo = FALSE}
 
+```r
 ggplot(airquality,
        aes(x = Ozone,
            y = Temp)) + 
   geom_point()
-
 ```
 
-
-```{r print-coef-table}
-
-knitr::kable(coef(lm_fit))
-
+```
+## Warning: Removed 37 rows containing missing values (geom_point).
 ```
 
-`r coef(lm_fit)[2]`
-`broom::glance(lm_fit)$r.squared`
+![](02-rmd-figures-chunks_files/figure-html/figure-2-1.png)<!-- -->
+

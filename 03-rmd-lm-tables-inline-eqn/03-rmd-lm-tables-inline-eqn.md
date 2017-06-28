@@ -1,11 +1,6 @@
----
-title: "03-rmd-lm-tables-inline-eqn"
-author: "Your Name"
-date: 2017/06/27
-output: 
-  html_document:
-    keep_md: true
----
+# 03-rmd-lm-tables-inline-eqn
+Your Name  
+2017/06/27  
 
 # Tasks
 
@@ -42,38 +37,46 @@ We are going to explore the relationship between solar radiation and other selec
 
 We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2.
 
-```{r figure-1, fig.height = 2, fig.width = 2, echo = TRUE}
+
+```r
 library(ggplot2)
 ggplot(airquality,
        aes(x = Ozone,
            y = Solar.R)) + 
   geom_point()
+```
 
 ```
+## Warning: Removed 42 rows containing missing values (geom_point).
+```
+
+![](03-rmd-lm-tables-inline-eqn_files/figure-html/figure-1-1.png)<!-- -->
 
 We can also see that there is an interesting relationship between Ozone and temperature.
 
-```{r figure-2, fig.height = 2, fig.width = 2, echo = FALSE}
-
-ggplot(airquality,
-       aes(x = Ozone,
-           y = Temp)) + 
-  geom_point()
 
 ```
+## Warning: Removed 37 rows containing missing values (geom_point).
+```
+
+![](03-rmd-lm-tables-inline-eqn_files/figure-html/figure-2-1.png)<!-- -->
 
 - fit a linear model of Ozone ~ Temp + Wind + Solar.R 
     - (hint: use `lm`)
     
-```{r}
 
+```r
 lm_fit <- lm(Ozone ~ Temp + Wind + Solar.R,
              airquality)
 
 lm_fit_coef <- coef(lm_fit)
 
 lm_fit_coef
+```
 
+```
+##  (Intercept)         Temp         Wind      Solar.R 
+## -64.34207893   1.65209291  -3.33359131   0.05982059
 ```
 
     
@@ -81,30 +84,47 @@ lm_fit_coef
     - (hint: use `coef` and `knitr::kable`)
     
 
-```{r}
 
+```r
 library(knitr)
 
 kable(lm_fit_coef)
-
-library(broom)
-
-tidy(lm_fit)
-
-kable(tidy(lm_fit))
-
 ```
+
+
+
+------------  ------------
+(Intercept)    -64.3420789
+Temp             1.6520929
+Wind            -3.3335913
+Solar.R          0.0598206
+------------  ------------
+
+```r
+kable(as.data.frame(lm_fit_coef))
+```
+
+               lm_fit_coef
+------------  ------------
+(Intercept)    -64.3420789
+Temp             1.6520929
+Wind            -3.3335913
+Solar.R          0.0598206
 
 
   - Make some inline code chunks that describe the single values of the R-squared or a coefficient
   
-```{r}
 
+```r
 lm_fit_coef[1]
-
 ```
 
-We see that the intercept of the model is at `r lm_fit_coef[1]`
+```
+## (Intercept) 
+##   -64.34208
+```
+
+We see that the intercept of the model is at -64.3420789
 
   - Make an equation describing the relationship
   

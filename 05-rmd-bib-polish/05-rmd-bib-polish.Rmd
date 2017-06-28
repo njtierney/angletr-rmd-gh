@@ -1,6 +1,7 @@
 ---
 title: "05-rmd-bib-polish"
 output: html_document
+bibliography: packages.bib
 ---
 
 ```{r setup}
@@ -19,9 +20,15 @@ knitr::opts_chunk$set(echo = FALSE,
   - hint: look at the names in packages.bib
 - Tidy up the structure, provide some more words around the introduction and results
 
+Principles of tidy data [@wickham2014]
+
+Principles of tidy data -@wickham2014
+
+
+
 # Introduction
 
-This is a simple analysis of the New York Air Quality Measurements using the R statistical programming language (CITATION PLEASE!). As stated in the helpfile `?airquality`, this dataset contains:
+This is a simple analysis of the New York Air Quality Measurements using the R statistical programming language [@base]. As stated in the helpfile `?airquality`, this dataset contains
 
 > Daily air quality measurements in New York, May to September 1973.
 
@@ -55,7 +62,7 @@ $$
 
 # Results
 
-We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2.
+We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2 [@ggplot2]
 
 ```{r figure-1, fig.height = 2, fig.width = 2, echo = TRUE}
 library(ggplot2)

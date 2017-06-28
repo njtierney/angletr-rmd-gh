@@ -3,14 +3,12 @@ title: "Rmarkdown example"
 author: "Nicholas Tierney"
 bibliography: packages.bib
 output:
+  word_document:
+    toc: yes
   pdf_document:
     toc: yes
   html_document:
     keep_md: yes
-    toc: yes
-    toc_float: yes
-  word_document:
-    toc: yes
 csl: bmj.csl
 Date: 2017/06/27
 ---
@@ -67,7 +65,7 @@ tidy_aq <-rename(.data = airquality,
 
 We can see that there is an interesting relationship between ozone and solar radiation in figure 1 below, plotted using ggplot2 [@ggplot2]
 
-```{r figure-1, fig.height = 4, fig.width=4}
+```{r figure-1, fig.height = 4, fig.width=4, fig.cap="This is a figure of Ozone and Solar Radiation. Good question!"}
 
 ggplot(tidy_aq,
        aes(x = ozone_ppb,
@@ -90,7 +88,7 @@ ggplot(tidy_aq,
 To explore the relationships between Ozone and all of the variables in the dataset, we can fit a basic linear model, with Ozone as the outcome, and all other variables as the predictors. We can express this as:
 
 $$
-Ozone \sim \beta_0 + \beta_1Solar + \beta_2 Wind + \beta_3Temp + \epsilon
+Ozone \sim \beta_0 + \beta_1Solar + \beta_2 Wind + \beta_3Temp + \gamma +  \epsilon
 $$
 
 
@@ -146,3 +144,11 @@ knitr::write_bib(c(
 prefix = getOption("knitr.bib.prefix", ""))
 ```
 
+
+```{r lm-kable-2, echo = TRUE, eval = FALSE}
+
+knitr::kable(tidy_lm_aq,
+             digits = 3,
+             caption = "Table of results from the linear model")
+
+```
